@@ -1,0 +1,110 @@
+/* تخصيص الخطوط والألوان */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+  }
+  /* تعديل المسافة بين الناف بار والمحتوى */
+  .navbar {
+    margin-bottom: -24px; /* يمكنك زيادة أو تقليل هذه القيمة حسب الحاجة */
+  }
+  .table-responsive {
+    margin: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .table thead {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+  }
+  .table th, .table td {
+    vertical-align: middle;
+    padding: 15px;
+  }
+  .table tbody tr {
+    transition: all 0.3s ease;
+  }
+  .table tbody tr:hover {
+    background-color: #f1f3f5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .btnS, .btnE, .btnD {
+    margin: 2px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  .btnS {
+    background-color: #17a2b8;
+    border: none;
+    color: white;
+  }
+  .btnE {
+    background-color: #ffc107;
+    border: none;
+    color: white;
+  }
+  .btnD {
+    background-color: #dc3545;
+    border: none;
+    color: white;
+  }
+  .btnS:hover, .btnE:hover, .btnD:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+  .btn-success {
+    background: linear-gradient(135deg, #28a745, #f4cdcd);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  .btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #000;
+  }
+  .btn-danger {
+    background: linear-gradient(135deg, #dc3545, #ff6b6b);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  .btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  .pro-frame {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .pagination {
+    margin: 20px 0;
+  }
+  .pagination .page-item.active .page-link {
+    background-color: #6a11cb;
+    border-color: #6a11cb;
+  }
+  .pagination .page-link {
+    color: #6a11cb;
+  }
+  /* تصميم الفوتر */
+  footer {
+    background-color: #0d1b2a; /* لون أزرق غامق */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px; /* زيادة المسافة بين المحتوى والفوتر */
+  }
+  footer p {
+    margin: 0;
+    font-size: 14px;
+  }

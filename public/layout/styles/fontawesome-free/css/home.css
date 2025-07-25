@@ -1,0 +1,172 @@
+.openbtn {
+    background: linear-gradient(135deg, #ff0000, #8b0000); /* تدرج أحمر رياضي */
+    color: white;
+    border: none;
+    padding: 14px 22px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50px; /* شكل زر حديث */
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4); /* ظل يوحي بالحركة */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.openbtn:hover {
+    background: linear-gradient(135deg, #ff4d00, #b30000); /* لون أقوى عند التمرير */
+    transform: scale(1.1); /* تكبير بسيط عند التمرير */
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6);
+}
+
+.openbtn:active {
+    transform: scale(0.95); /* تأثير ضغط الزر */
+    box-shadow: 0 3px 10px rgba(255, 0, 0, 0.5);
+}
+
+  
+  /* تنسيق الشعار */
+  .logo-section {
+    margin-bottom: 30px;
+  }
+  
+  .footer-logo {
+    width: 150px; /* حجم أكبر */
+    margin-bottom: 10px;
+  }
+  
+  .logo a {
+    font-size: 32px; /* حجم أكبر للنص */
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .logo a span {
+    color: #ff5722; /* لون مميز */
+  }
+  
+  /* تنسيق وسائل الدفع */
+  .footer-section .fa-cc-visa,
+  .footer-section .fa-cc-mastercard,
+  .footer-section .fa-cc-paypal {
+    font-size: 24px;
+    color: #fff;
+    margin-right: 10px;
+  }
+  
+  /* تنسيق عام للفوتر */
+  #footer {
+    padding: 40px 0;
+    color: #fff;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  
+  .footer-section {
+    width: 23%;
+    margin-bottom: 20px;
+  }
+  
+  .heading {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 15px;
+  }
+  
+  .nospace.linklist li {
+    margin-bottom: 10px;
+  }
+  
+  .nospace.linklist a {
+    color: #ccc;
+    text-decoration: none;
+  }
+  
+  .nospace.linklist a:hover {
+    color: #ff5722; /* تأثير الهوفر */
+  }
+  
+  /* الأيقونات الاجتماعية */
+  .social-icons {
+    margin-top: 20px;
+  }
+  
+  .faico li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+  .faico a {
+    color: #fff;
+    font-size: 20px;
+  }
+  
+  .faico a:hover {
+    color: #ff5722; /* تأثير الهوفر */
+  }
+  
+  /* حقوق النشر */
+  .copyright {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ccc;
+  }
+   @keyframes float {
+              0%, 100% {
+                  transform: translateY(0);
+              }
+              50% {
+                  transform: translateY(-10px);
+              }
+          }
+          .card-clickable {
+              transition: transform 0.2s, box-shadow 0.2s;
+              cursor: pointer;
+          }
+          .card-clickable:hover {
+              transform: translateY(-5px);
+              box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+          }
+          .badge {
+              font-size: 0.9em;
+          }
+          .table-hover tbody tr:hover {
+              background-color: rgba(0, 0, 0, 0.05);
+          }
+          .navbar {
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          }
+          .container {
+              max-width: 1200px;
+          }
+           /* تنسيق زر Agency Dashboard */
+    .agency-dashboard-btn {
+        background-color: #ffd700; /* لون ذهبي */
+        color: #000; /* لون النص أسود */
+        border: 2px solid #ffd700; /* حدود ذهبية */
+        padding: 10px 20px; /* حشوة داخلية */
+        border-radius: 25px; /* زوايا مدورة */
+        font-weight: 600; /* سمك الخط */
+        text-transform: uppercase; /* تحويل النص إلى أحرف كبيرة */
+        transition: all 0.3s ease; /* تأثير انتقالي */
+        cursor: pointer; /* تغيير شكل المؤشر */
+        text-decoration: none; /* إزالة التسطير */
+        display: inline-block; /* لجعله عنصرًا سطريًا */
+        margin-top: 10px; /* تباعد من الأعلى */
+    }
+
+    .agency-dashboard-btn:hover {
+        background-color: #000; /* لون الخلفية أسود عند التمرير */
+        color: #ffd700; /* لون النص ذهبي عند التمرير */
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* ظل ذهبي */
+        transform: translateY(-2px); /* تحريك الزر لأعلى قليلاً */
+    }
+          

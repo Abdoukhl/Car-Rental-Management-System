@@ -1,0 +1,339 @@
+@charset "utf-8";
+/*
+Template Name: Chillaid
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Copyright: OS-Templates.com
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+File: Framework CSS
+*/
+ /* Sidebar Styles */
+ .sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: #222;
+    padding-top: 20px;
+    transition: 0.3s;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+
+  .sidebar a {
+    padding: 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .sidebar a:hover {
+    background-color: #444;
+  }
+
+  .sidebar .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+  }
+
+  .sidebar .logo {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .sidebar .logo img {
+    width: 150px;
+    border-radius: 5px;
+  }
+
+  .sidebar .buttons {
+    margin: 20px;
+  }
+
+  .sidebar .buttons button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .sidebar .login-btn {
+    background-color: #28a745;
+    color: white;
+  }
+
+  .sidebar .signup-btn {
+    background-color: #007bff;
+    color: white;
+  }
+
+  .sidebar .logout-btn {
+    background-color: #dc3545;
+    color: white;
+  }
+
+  /* Open Sidebar */
+  .open-sidebar {
+    left: 0;
+  }
+
+  /* Sidebar Toggle Button */
+  .openbtn {
+    font-size: 24px;
+    cursor: pointer;
+    background-color: #222;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1100;
+    border-radius: 5px;
+  }
+
+  .openbtn:hover {
+    background-color: #444;
+  }
+/* General Styling for Navbar */
+#mainav {
+    background: #000000; /* Dark background for sleek and modern look */
+    padding: 10px 30px; /* Adjust padding to make the navbar a bit smaller */
+    font-family: 'Roboto', sans-serif; /* Sleek font for a modern feel */
+    position:absolute;
+    top: 73px; /* Adjusted to 62px to prevent covering logo */
+    right: 0; /* Make navbar align to the right */
+    width: auto; /* Navbar will not stretch full width */
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.555); /* Subtle shadow to lift navbar */
+    border-bottom: 2px solid #3b0aaf; /* Blue underline for a clean division */
+}
+
+/* Navbar Items List */
+#mainav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: right; /* Align items to the right */
+}
+
+/* Navbar List Items */
+#mainav li {
+    display: inline-block;
+    margin: 0 15px; /* Adjusted space between items */
+    position: relative;
+}
+
+/* Links Styling */
+#mainav li a {
+    color: #f0f0f0; /* Light color for easy readability */
+    text-decoration: none;
+    font-size: 16px; /* Slightly smaller font for a cleaner look */
+    padding: 12px 22px; /* Reduced padding to match new size */
+    border-radius: 6px;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover Effect for Links */
+#mainav li a:hover {
+    background-color:#2700a7; /* Blue background on hover */
+    color: #ffffff; /* Light text color on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Shadow to make it pop */
+    transform: translateY(-4px); /* Lift effect on hover */
+}
+
+/* Dropdown Menu */
+#mainav .drop ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #2c2c2c; /* Darker background for dropdown */
+    border-radius: 6px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    padding: 10px 0;
+    min-width: 180px; /* Make dropdown wider */
+}
+
+/* Show dropdown on hover */
+#mainav .drop:hover ul {
+    display: block;
+}
+
+/* Dropdown Links */
+#mainav .drop ul li a {
+    padding: 12px 25px;
+    color: #f0f0f0; /* Same light color for text in dropdown */
+    text-decoration: none;
+}
+
+/* Hover Effect for Dropdown Links */
+#mainav .drop ul li a:hover {
+    background-color: #007BFF; /* Blue background on hover */
+}
+
+/* Active Item Styling */
+#mainav li.active a {
+    background-color: #2700a7; /* Active blue background */
+    color: #ffffff; /* White text on active item */
+    font-weight: bold;
+}
+
+/* Improved Mobile View */
+@media screen and (max-width: 768px) {
+    #mainav {
+        padding: 10px 15px;
+    }
+
+    #mainav ul {
+        text-align: center;
+    }
+
+    #mainav li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+html{overflow-y:scroll; overflow-x:hidden;}
+html, body{margin:0; padding:0; font-size:14px; line-height:1.6em;}
+
+*, *::before, *::after{box-sizing:border-box;}
+
+.bold{font-weight:bold;}
+.center{text-align:center;}
+.right{text-align:right;}
+.uppercase{text-transform:uppercase;}
+.capitalise{text-transform:capitalize;}
+.hidden{display:none;}
+.nospace{margin:0; padding:0; list-style:none;}
+.block{display:block;}
+.inline{display:inline-block;}
+.justified{text-align:justify;}
+.inline *{display:inline-block;}
+.inline *:last-child{margin-right:0;}
+.pushright li{margin-right:20px;}
+.pushright li:last-child{margin-right:0;}
+.borderedbox{border:1px solid;}
+.overlay{position:relative; z-index:1;}
+.overlay::after{display:block; position:absolute; top:0; left:0; width:100%; height:100%; content:""; z-index:-1;}
+.bgded{background-position:top center; background-repeat:no-repeat; background-size:cover;}
+.circle{border-radius:50%; background-clip:padding-box;}
+
+.logoname{margin:0; padding:0; font-size:1.8rem; font-variant:small-caps;}
+.logoname::first-letter, .logoname span{margin:0 5px; font-size:2.4rem; font-weight:700; text-transform:uppercase;}
+.logoname::first-letter{margin-left:0;}
+.btnC{display:inline-block; padding:8px 18px 10px; text-transform:uppercase; border:1px solid;}
+.btnS{display:inline-block; padding:8px 18px 10px; text-transform:uppercase; border:1px solid;}
+.btn{display:inline-block; padding:8px 18px 10px; text-transform:uppercase; border:1px solid;}
+.btnR{display:inline-block; padding:8px 18px 10px; text-transform:uppercase; border:1px solid;}
+.btnE{display:inline-block; padding:8px 18px 10px; text-transform:uppercase; border:1px solid;}
+.btnD{display:inline-block; padding:8px 18px 10px; text-transform:uppercase; border:1px solid;}
+.btnn{display:inline-block; padding:8px 18px 10px; text-transform:uppercase; border:1px solid;}
+blockquote{display:block; position:relative; width:100%; margin:0; padding:30px; line-height:1.4; z-index:1;}
+blockquote::before{display:block; position:absolute; top:0; left:0; font-family:"Font Awesome\ 5 Free"; font-weight:900; font-size:60px; line-height:60px; content:"\f10d"; z-index:-1;}
+
+.clear, .group{display:block;}
+.clear::before, .clear::after, .group::before, .group::after{display:table; content:"";}
+.clear, .clear::after, .group, .group::after{clear:both;}
+
+a{outline:none; text-decoration:none;}
+
+.fl_left, .imgl{float:left;
+    
+}
+.fl_right, .imgr{float:right;}
+
+img{width:auto; max-width:100%; height:auto; margin:0; padding:0; border:none; line-height:normal; vertical-align:middle;}
+.imgl{margin:0 15px 10px 0; clear:left;}
+.imgr{margin:0 0 10px 15px; clear:right;}
+.imgover{display:inline-block; position:relative; max-width:100%;}
+.imgover::before, .imgover::after{display:block; position:absolute; content:""; text-align:center; opacity:0;}
+.imgover::before{top:0; right:0; bottom:0; left:0;}
+.imgover::after{top:50%; left:50%; width:50px; height:50px; line-height:50px; margin:-25px 0 0 -25px; font-family:"Font Awesome\ 5 Free"; font-weight:900; content:"\f067";/* fa-plus */ font-size:28px;}
+.imgover:hover::before, .imgover:hover::after{opacity:1;}
+
+
+/* Fonts
+--------------------------------------------------------------------------------------------------------------- */
+body, input, textarea, select{font-family:Verdana, Geneva, sans-serif;}
+h1, h2, h3, h4, h5, h6, .heading{font-family:Georgia, "Times New Roman", Times, serif;}
+
+
+/* Forms
+--------------------------------------------------------------------------------------------------------------- */
+form, fieldset, legend{margin:0; padding:0; border:none;}
+legend{display:none;}
+label, input, textarea, select, button{display:block; resize:none; outline:none; color:inherit; font-size:inherit; font-family:inherit; vertical-align:middle;}
+label{margin-bottom:5px;}
+:required, :invalid{outline:none; box-shadow:none;}
+::placeholder{opacity:1;}/* Makes sure the placeholder text is not transparent */
+
+
+/* Generalise
+--------------------------------------------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6, .heading{margin:0 0 20px 0; font-size:1.4rem; line-height:normal; font-weight:normal; text-transform:capitalize;}
+.heading.nospace{margin-bottom:0;}
+
+address{font-style:normal; font-weight:normal;}
+hr{display:block; width:100%; height:1px; border:solid; border-width:1px 0 0 0;}
+
+.font-xs{font-size:1rem;}
+.font-x2{font-size:2.2rem;}
+.font-x3{font-size:3.2rem;}
+
+.wrapper{display:block; position:relative; width:100%; margin:0; padding:0; text-align:left; word-wrap:break-word;}
+/*
+The "hoc" class is a generic class used to centre a containing element horizontally
+It should be used in conjunction with a second class or ID
+*/
+.hoc{display:block; margin:0 auto;}
+
+
+/* HTML 5 Overrides
+--------------------------------------------------------------------------------------------------------------- */
+address, article, aside, figcaption, figure, footer, header, main, nav, section{display:block; margin:0; padding:0;}
+
+
+/* Grid - RS-MQF 1140 V.2 - https://www.os-templates.com/free-basic-html5-templates/rs-mqf-1140
+--------------------------------------------------------------------------------------------------------------- */
+.one_half, .one_third, .two_third, .one_quarter, .two_quarter, .three_quarter{display:inline-block; float:left; margin:0 0 0 4.21052%; list-style:none;}
+
+.first{margin-left:0; clear:left;}
+
+.one_quarter{width:21.8421%;
+}
+.one_third{width:30.52631%;}
+.one_half, .two_quarter{width:47.89473%;}
+.two_third{width:65.26315%;}
+.three_quarter{width:73.94736%;}
+
+/* Spacing
+--------------------------------------------------------------------------------------------------------------- */
+.btmspace-10{margin-bottom:10px;}
+.btmspace-15{margin-bottom:15px;}
+.btmspace-20{margin-bottom:20px;}
+.btmspace-30{margin-bottom:30px;}
+.btmspace-50{margin-bottom:50px;}
+.btmspace-80{margin-bottom:80px;}
+
+.rgtspace-5{margin-right:5px;}
+.rgtspace-10{margin-right:10px;}
+.rgtspace-15{margin-right:15px;}
+.rgtspace-20{margin-right:20px;}
+.rgtspace-30{margin-right:30px;}
+
+.inspace-5{padding:5px;}
+.inspace-10{padding:10px;}
+.inspace-15{padding:15px;}
+.inspace-20{padding:20px;}
+.inspace-30{padding:30px;}
