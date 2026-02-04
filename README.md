@@ -1,68 +1,225 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# AETHORIA Car Rental Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A comprehensive car rental management system built with Laravel 11, featuring multi-role support, real-time booking management, and payment processing.
 
-## About Laravel
+![Laravel](https://img.shields.io/badge/Laravel-11.0-red)
+![PHP](https://img.shields.io/badge/PHP-8.2+-blue)
+![Livewire](https://img.shields.io/badge/Livewire-3.6-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Core Functionality
+- **Multi-Role System**: Admin, Agency, and Customer roles with specific permissions
+- **Car Fleet Management**: Complete vehicle inventory with features, pricing, and availability
+- **Real-time Booking System**: Reservation management with calendar integration
+- **Payment Processing**: Secure payment handling with Stripe integration
+- **Document Management**: Verification documents for agencies and customers
+- **Rating & Review System**: Customer feedback and vehicle ratings
+- **Messaging System**: Internal communication between users
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Advanced Features
+- **Subscription Plans**: Agency subscription management with different tiers
+- **Notification System**: Real-time alerts and email notifications
+- **Insurance Management**: Comprehensive insurance tracking
+- **Contract Generation**: Automated rental contract creation
+- **Dashboard Analytics**: Performance metrics and reporting
+- **Responsive Design**: Mobile-first approach with TailwindCSS
 
-## Learning Laravel
+## 🛠️ Technical Stack
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Backend
+- **Framework**: Laravel 11
+- **Language**: PHP 8.2+
+- **Database**: SQLite (configurable for MySQL/PostgreSQL)
+- **Authentication**: Laravel Breeze
+- **Queue System**: Redis/Database
+- **Image Processing**: Intervention Image
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Frontend
+- **UI Framework**: Livewire 3.6 + Volt
+- **Styling**: TailwindCSS
+- **Icons**: Font Awesome
+- **JavaScript**: Alpine.js (via Livewire)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Third-party Services
+- **Payment**: Stripe
+- **Email**: SMTP (configurable)
+- **File Storage**: Local/Cloud (configurable)
 
-## Laravel Sponsors
+## 📋 Requirements
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- PHP 8.2 or higher
+- Composer 2.0 or higher
+- Node.js 18 or higher
+- NPM or Yarn
+- SQLite, MySQL, or PostgreSQL
 
-### Premium Partners
+## 🚀 Installation
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Abdoukhl/Car-Rental-Management-System.git
+cd Car-Rental-Management-System
+```
 
-## Contributing
+### 2. Install Dependencies
+```bash
+composer install
+npm install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 3. Environment Setup
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-## Code of Conduct
+### 4. Database Configuration
+Edit your `.env` file with your database credentials:
+```env
+DB_CONNECTION=sqlite
+# DB_HOST=127.0.0.1
+# DB_PORT=3306
+# DB_DATABASE=car_rental
+# DB_USERNAME=root
+# DB_PASSWORD=
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 5. Database Migration
+```bash
+php artisan migrate
+php artisan db:seed
+```
 
-## Security Vulnerabilities
+### 6. Frontend Compilation
+```bash
+npm run build
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 7. Start the Application
+```bash
+php artisan serve
+```
 
-## License
+Visit `http://localhost:8000` in your browser.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-"# AETHORIA-rental" 
-"# AETHORIA-rental" 
+## 👥 User Roles
+
+### Admin
+- Full system administration
+- User management and approval
+- Agency subscription management
+- System analytics and reporting
+
+### Agency
+- Vehicle fleet management
+- Booking management
+- Customer communication
+- Subscription plan management
+
+### Customer
+- Vehicle browsing and booking
+- Payment processing
+- Review and rating system
+- Profile management
+
+## 🔧 Configuration
+
+### Environment Variables
+Key environment variables to configure:
+
+```env
+APP_NAME=AETHORIA Rental
+APP_ENV=local
+APP_DEBUG=true
+APP_URL=http://localhost
+
+# Database
+DB_CONNECTION=sqlite
+
+# Stripe Payment
+STRIPE_KEY=your_stripe_key
+STRIPE_SECRET=your_stripe_secret
+
+# Mail Configuration
+MAIL_MAILER=smtp
+MAIL_HOST=mailhog
+MAIL_PORT=1025
+```
+
+### Default Admin Account
+After running database seeds, you can access the admin panel with:
+- **Email**: `admin@example.com`
+- **Password**: `password`
+
+⚠️ **Important**: Change the default credentials in production!
+
+## 📁 Project Structure
+
+```
+├── app/
+│   ├── Http/Controllers/     # Application controllers
+│   ├── Livewire/            # Livewire components
+│   ├── Models/              # Eloquent models
+│   └── Notifications/       # Notification classes
+├── database/
+│   ├── migrations/         # Database migrations
+│   └── seeders/            # Database seeders
+├── resources/
+│   ├── views/              # Blade templates
+│   └── lang/               # Translation files
+├── routes/                 # Route definitions
+└── public/                 # Public assets
+```
+
+## 🧪 Testing
+
+Run the test suite:
+
+```bash
+php artisan test
+```
+
+## 📦 Deployment
+
+### Production Setup
+1. Set `APP_ENV=production` in `.env`
+2. Run `php artisan config:cache`
+3. Run `php artisan route:cache`
+4. Run `php artisan view:cache`
+5. Configure your web server to point to the `public` directory
+
+### Docker Deployment
+```bash
+docker-compose up -d
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🆘 Support
+
+If you have any questions or issues, please:
+- Open an issue on GitHub
+- Contact the development team
+
+## 🙏 Acknowledgments
+
+- [Laravel Framework](https://laravel.com/)
+- [Livewire](https://livewire.laravel.com/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Stripe](https://stripe.com/)
+
+---
+
+**AETHORIA Car Rental System** - Where innovation meets automotive excellence. 
