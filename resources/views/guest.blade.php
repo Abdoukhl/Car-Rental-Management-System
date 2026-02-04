@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KLBC Car Rental</title>
+    <title>Aethoria Rental Drive</title>
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <!-- Google Fonts -->
@@ -51,7 +51,7 @@
         }
         
         .header.scrolled {
-            padding: 0.5rem 0;
+            padding: 0rem 0;
             background-color: rgba(10, 25, 47, 0.95);
             backdrop-filter: blur(10px);
         }

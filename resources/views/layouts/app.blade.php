@@ -2,9 +2,11 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KLBC Car Rental</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Aethoria Rental Drive</title>
     <!-- Font Awesome -->
+    <link rel="icon" type="" href="images/demo/Gallery/Aethoria Rental Drive Logo.png">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -22,8 +24,15 @@
             --dark-gray: #333333;
             --black: #000000;
             --sidebar-width: 280px;
-            --transition-speed: 0.4s;
+            --mobile-sidebar-width: 90%;
+            --transition-speed: 0.3s;
             --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+            --navbar-height: 80px;
+            --mobile-navbar-height: 120px;
+        }
+        
+        * {
+            box-sizing: border-box;
         }
         
         body {
@@ -34,6 +43,7 @@
             padding: 0;
             line-height: 1.6;
             transition: padding-left var(--transition-speed) var(--transition-easing);
+            overflow-x: hidden;
         }
         
         /* Sidebar Styles */
@@ -69,8 +79,7 @@
             margin: 5px 15px;
             border-radius: 6px;
         }
-       
-
+        
         .sidebar a:hover {
             background-color: rgba(255,255,255,0.1);
             color: var(--light-blue);
@@ -119,7 +128,6 @@
             opacity: 1;
             visibility: visible;
         }
-    
         
         /* Sidebar toggle button */
         .openbtn {
@@ -214,14 +222,16 @@
             margin-right: 8px;
         }
         
-        .sidebar-login-btn {
-            background-color: var(--primary-blue);
+        .sidebar-btn.sidebar-login-btn {
             background-color: rgb(4, 129, 4);
-    color: white; /* اللون الافتراضي */
-    transition: color 0.3s ease-in-out;
+            color: white;
+            transition: color 0.3s ease-in-out;
         }
         
-       
+        .sidebar-btn.sidebar-login-btn:hover {
+            color: #c0ffb3;
+        }
+        
         .sidebar-register-btn {
             background-color: var(--accent-blue);
         }
@@ -230,18 +240,6 @@
             background-color: #090d10;
             transform: translateY(-2px);
         }
-
-
-        .sidebar-btn.sidebar-login-btn {
-    background-color: rgb(4, 129, 4);
-    color: white; /* اللون الافتراضي */
-    transition: color 0.3s ease-in-out;
-}
-
-.sidebar-btn.sidebar-login-btn:hover {
-    color: #c0ffb3; /* أخضر فاتح متناسق */
-}
-
         
         .logout-btn {
             background-color: #e53935;
@@ -280,26 +278,30 @@
             z-index: 999;
             box-shadow: 0 2px 15px rgba(0,0,0,0.15);
             transition: all 0.3s ease;
+            height: var(--navbar-height);
         }
         
         .navbar.scrolled {
             padding: 10px 5%;
             box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            height: calc(var(--navbar-height) - 10px);
         }
         
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 20px;
             align-items: center;
+            flex-wrap: wrap;
         }
         
         .navbar a {
             color: var(--white);
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
             text-decoration: none;
+            white-space: nowrap;
         }
         
         .navbar a:hover {
@@ -329,8 +331,9 @@
         
         .auth-links {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             align-items: center;
+            flex-wrap: wrap;
         }
         
         .user-card {
@@ -342,6 +345,7 @@
             transition: all 0.3s ease;
             cursor: pointer;
             position: relative;
+            white-space: nowrap;
         }
         
         .user-card:hover {
@@ -376,6 +380,7 @@
             color: var(--dark-gray);
             text-decoration: none;
             transition: all 0.2s ease;
+            font-size: 0.9rem;
         }
         
         .profile-dropdown a:hover {
@@ -394,11 +399,13 @@
             background-color: var(--accent-blue);
             border: none;
             color: var(--white);
-            padding: 8px 20px;
+            padding: 8px 16px;
             border-radius: 5px;
             font-weight: 600;
             transition: all 0.3s ease;
             cursor: pointer;
+            font-size: 0.9rem;
+            white-space: nowrap;
         }
         
         .auth-links button:hover {
@@ -410,18 +417,18 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
         }
 
         .logo img {
-            height: 70px;
+            height: 50px;
             transition: transform 0.3s ease;
             border-radius: 5px;
         }
 
         .company-name {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--white);
             text-transform: uppercase;
@@ -432,6 +439,7 @@
             background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            white-space: nowrap;
         }
 
         .company-name::after {
@@ -454,13 +462,14 @@
         
         /* Main Content */
         .main-content {
-            margin-top: 80px;
+            margin-top: var(--navbar-height);
             padding: 20px;
             transition: margin-top 0.3s ease;
+            min-height: calc(100vh - var(--navbar-height) - 80px);
         }
         
         .main-content.scrolled {
-            margin-top: 70px;
+            margin-top: calc(var(--navbar-height) - 10px);
         }
         
         /* Footer Styles */
@@ -469,6 +478,8 @@
             color: var(--white);
             padding: 30px 0;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
         
         .footer a {
@@ -493,6 +504,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            font-size: 0.9rem;
         }
         
         .subscribe-btn:hover {
@@ -506,67 +518,163 @@
         }
         
         /* Responsive Design */
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             .navbar {
-                padding: 12px 5%;
-                flex-direction: column;
+                flex-wrap: wrap;
                 height: auto;
+                padding: 10px 5%;
             }
             
             .nav-links {
-                gap: 15px;
-                margin-top: 15px;
-                flex-wrap: wrap;
+                order: 3;
+                width: 100%;
                 justify-content: center;
+                margin-top: 10px;
+                gap: 15px;
             }
             
             .auth-links {
-                margin-top: 15px;
-                gap: 15px;
+                order: 2;
+                margin-left: auto;
+                gap: 10px;
+            }
+            
+            .logo-container {
+                order: 1;
+            }
+            
+            .main-content {
+                margin-top: var(--mobile-navbar-height);
+            }
+            
+            .main-content.scrolled {
+                margin-top: calc(var(--mobile-navbar-height) - 10px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            :root {
+                --sidebar-width: var(--mobile-sidebar-width);
+            }
+            
+            .navbar {
+                padding: 8px 3%;
+            }
+            
+            .nav-links {
+                gap: 10px;
+                font-size: 0.9rem;
+            }
+            
+            .auth-links {
+                gap: 8px;
+            }
+            
+            .logo img {
+                height: 40px;
+            }
+
+            .company-name {
+                font-size: 1.2rem;
             }
             
             .navbar a {
                 font-size: 0.9rem;
             }
             
-            .logo img {
-                height: 50px;
-            }
-
-            .company-name {
-                font-size: 1.5rem;
+            .auth-links button {
+                padding: 6px 12px;
+                font-size: 0.8rem;
             }
             
-            .main-content {
-                margin-top: 140px;
+            .user-card {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .profile-dropdown {
+                width: 180px;
             }
         }
         
         @media (max-width: 480px) {
-            .auth-links {
-                flex-direction: column;
-                gap: 10px;
+            .navbar {
+                padding: 5px 2%;
             }
             
-            .user-card span {
+            .nav-links {
+                gap: 8px;
                 font-size: 0.8rem;
             }
             
-            .sidebar {
-                width: 100%;
-                left: -100%;
-            }
-            
-            .sidebar.active {
-                transform: translateX(100%);
-            }
-
-            .logo-container {
-                flex-direction: column;
+            .auth-links {
                 gap: 5px;
             }
+            
+            .logo img {
+                height: 35px;
+            }
+
             .company-name {
+                font-size: 1rem;
+            }
+            
+            .navbar a {
+                font-size: 0.8rem;
+            }
+            
+            .auth-links button {
+                padding: 5px 10px;
+                font-size: 0.7rem;
+            }
+            
+            .user-card {
+                padding: 5px 10px;
+                font-size: 0.8rem;
+            }
+            
+            .profile-dropdown {
+                width: 160px;
+            }
+            
+            .openbtn {
+                width: 40px;
+                height: 40px;
                 font-size: 1.2rem;
+                top: 10px;
+                left: 10px;
+            }
+            
+            .sidebar a {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .sidebar-buttons {
+                padding: 10px;
+            }
+            
+            .sidebar-btn {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .logo-container {
+                gap: 5px;
+            }
+            
+            .company-name {
+                font-size: 0.9rem;
+            }
+            
+            .nav-links {
+                gap: 5px;
+            }
+            
+            .auth-links button {
+                padding: 4px 8px;
             }
         }
     </style>
@@ -644,10 +752,10 @@
             @php
                 $subscription = Auth::user()->agency->subscription ?? null;
                 $daysRemaining = $subscription && $subscription->end_date > now() 
-                    ? (int)now()->diffInDays($subscription->end_date) // تحويل إلى عدد صحيح
+                    ? (int)now()->diffInDays($subscription->end_date)
                     : 0;
                    
-                            $totalDays = $daysRemaining;
+                $totalDays = $daysRemaining;
             @endphp
     
             @if($subscription && $subscription->end_date > now())
@@ -720,23 +828,20 @@
         <i class="fas fa-calendar-alt me-2"></i> Bookings
     </a>
 @endif
-
                 
                 <a href="/contact">
                     <i class="fas fa-info-circle me-2"></i> About
                 </a>
                 <a href="http://127.0.0.1:8000/dashboard#contact"><i class="fas fa-envelope"></i> Contact</a>
 
-
                 @auth
                 @if(auth()->user()->account_type === 'agency')
                     @php
                         $subscription = Auth::user()->agency->subscription ?? null;
                         $daysRemaining = $subscription && $subscription->end_date > now() 
-                            ? (int)now()->diffInDays($subscription->end_date)  // التحويل إلى عدد صحيح
+                            ? (int)now()->diffInDays($subscription->end_date)
                             : 0;
-                            $newDays = request('plan') === 'monthly' ? 30 : 365;
-                            $totalDays = $daysRemaining;
+                        $totalDays = $daysRemaining;
                     @endphp
            
                     @if($subscription && $subscription->end_date > now())
@@ -785,8 +890,6 @@
                             <i class="fas fa-user-circle"></i> Profile
                         </a>
                    
-           
-                
                         <a href="#">
                             <i class="fas fa-cog"></i> Settings
                         </a>
@@ -809,7 +912,7 @@
             </div>
         </nav>
 
-        <div >
+        <div class="main-content" id="mainContent">
             {{ $slot }}
         </div>
     </div>
@@ -826,13 +929,13 @@
     @livewireScripts
 
     <script>
-        // Sidebar Toggle Function with smoother animation
         document.addEventListener('DOMContentLoaded', function() {
             // العناصر الأساسية
             const sidebar = document.getElementById("mySidebar");
-            const overlay = document.getElementById("sidebarOverlay");
+            const overlay = document.querySelector(".sidebar-overlay");
             const toggleBtn = document.getElementById("sidebarToggleBtn");
             const body = document.body;
+            const mainContent = document.getElementById("mainContent");
 
             // دالة تبديل السايدبار
             function toggleSidebar() {
@@ -871,12 +974,21 @@
             // تأثير التمرير للناف بار
             window.addEventListener('scroll', function() {
                 const navbar = document.getElementById('mainNavbar');
-                const mainContent = document.getElementById('mainContent');
                 const isScrolled = window.scrollY > 50;
                 
                 navbar?.classList.toggle('scrolled', isScrolled);
                 mainContent?.classList.toggle('scrolled', isScrolled);
             });
+
+            // تعديل حجم السايدبار ليتناسب مع ارتفاع الشاشة
+            function adjustSidebarHeight() {
+                const windowHeight = window.innerHeight;
+                sidebar.style.height = windowHeight + 'px';
+            }
+
+            // تعديل الارتفاع عند تحميل الصفحة وعند تغيير حجم النافذة
+            adjustSidebarHeight();
+            window.addEventListener('resize', adjustSidebarHeight);
         });
     </script>
 </body>
